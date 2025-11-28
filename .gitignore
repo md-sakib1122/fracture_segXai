@@ -1,0 +1,5 @@
+venv/
+
+# VSCode / JetBrains IDE
+.vscode/
+.idea/
