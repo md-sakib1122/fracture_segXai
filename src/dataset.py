@@ -150,15 +150,15 @@ def get_train_transforms(image_size=512):
 
         # Geometric augmentations (mild)
         A.HorizontalFlip(p=0.5),
-        A.ShiftScaleRotate(
-            shift_limit=0.05,
-            scale_limit=0.1,
-            rotate_limit=10,
-            border_mode=cv2.BORDER_CONSTANT,
-            value=0,
-            mask_value=0,
+        A.Affine(
+            translate_percent={'x': (-0.05, 0.05), 'y': (-0.05, 0.05)},
+            scale=(0.9, 1.1),
+            rotate=(-10, 10),
             p=0.5
         ),
+
+
+
 
 
         # Intensity augmentations (important for X-rays)
